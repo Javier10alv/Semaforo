@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía - Exclusión Mutua</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 320px;
+            background: #222;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .section {
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 10px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        .optimista { background: #16A34A; border-color: #15803D; }
+        .pesimista { background: #DC2626; border-color: #B91C1C; }
+        .conclusion { background: #FACC15; color: black; border-color: #CA8A04; }
+        h1 { margin-bottom: 15px; font-size: 20px; }
+        h2 { font-size: 18px; margin-bottom: 10px; }
+        p { font-size: 14px; margin: 5px 0; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Soluciones de Exclusión Mutua</h1>
+
+        <div class="section optimista">
+            <h2>🟢 Memoria Cacheada (Optimista)</h2>
+            <p><strong>Ejemplo:</strong> Cajero en un supermercado.</p>
+            <p>Los procesos pueden leer simultáneamente sin bloquearse entre sí, reduciendo tiempos de espera.</p>
+            <p><strong>Ventajas:</strong> Mayor velocidad, menor latencia, mejor rendimiento en sistemas de alto tráfico.</p>
+            <p><strong>Desventajas:</strong> Posibles inconsistencias si no se maneja correctamente, requiere mecanismos adicionales para garantizar la integridad de datos.</p>
+            <p><strong>Funcionamiento:</strong> Se usa un caché intermedio que permite lecturas sin afectar el recurso principal. Cuando un proceso escribe, se sincroniza la memoria para evitar errores.</p>
+        </div>
+
+        <div class="section pesimista">
+            <h2>🔴 Bit de Candado (Pesimista)</h2>
+            <p><strong>Ejemplo:</strong> Baño público.</p>
+            <p>Solo un proceso puede acceder a la vez, garantizando la exclusión mutua pero con mayor tiempo de espera.</p>
+            <p><strong>Ventajas:</strong> Seguridad total en la ejecución sin interferencias, evita condiciones de carrera.</p>
+            <p><strong>Desventajas:</strong> Posibles bloqueos y mayor tiempo de espera, reduce el rendimiento si los procesos son largos.</p>
+            <p><strong>Funcionamiento:</strong> Se establece un bit de candado en la memoria compartida. Si el bit está activo, otros procesos deben esperar hasta que el recurso sea liberado.</p>
+        </div>
+
+        <div class="section conclusion">
+            <h2>🟡 Conclusión</h2>
+            <p>Dependiendo del contexto, es mejor una solución optimista o pesimista para gestionar los recursos.</p>
+            <p><strong>¿Cuál elegir?</strong> Si la prioridad es la velocidad y el acceso concurrente, la solución optimista es mejor. Si la prioridad es evitar errores y garantizar la integridad, la solución pesimista es la indicada.</p>
+            <p><strong>Aplicaciones:</strong> Los sistemas optimistas son comunes en bases de datos y almacenamiento en la nube. Los sistemas pesimistas se usan en sistemas críticos como transacciones bancarias y control de acceso.</p>
+        </div>
+    </div>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
